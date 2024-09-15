@@ -5,8 +5,8 @@ bool compatibleFileContent(const QString &thirdColHeader) {
 }
 
 CsvHandler::CsvHandler(QObject *parent) : QObject(parent), m_speedValue(0) {
-  m_timer = new QTimer(this);
-  connect(m_timer, &QTimer::timeout, this, &CsvHandler::getSpeed);
+  m_timer = std::make_shared<QTimer>(this);
+    connect(m_timer.get(), &QTimer::timeout, this, &CsvHandler::getSpeed);
 }
 
 double CsvHandler::speedValue() const { return m_speedValue; }

@@ -14,7 +14,6 @@
 
 class CsvHandler : public QObject {
   Q_OBJECT
-  QML_SINGLETON
   Q_PROPERTY(double speedValue READ speedValue NOTIFY speedValueChanged)
   Q_PROPERTY(
       bool goodFile READ goodFile WRITE setGoodFile NOTIFY goodFileChanged)
@@ -37,7 +36,7 @@ public slots:
 
 private:
   double m_speedValue = 0;
-  QTimer *m_timer;
+  std::shared_ptr<QTimer> m_timer;
   long long m_index = 0;
   bool m_goodFile = false;
 };
