@@ -1,11 +1,10 @@
 #ifndef CSVENTRY_H
 #define CSVENTRY_H
 
-class CsvEntry
-{
+class CsvEntry {
 public:
-    double value;
-    CsvEntry(const double &val);
+  double value;
+  CsvEntry(const double &val);
 };
 
 #endif // CSVENTRY_H

@@ -32,7 +32,8 @@ qt_add_qml_module(appqml_car_dashboard
     QML_FILES qml/components/FuelGuage.qml
     QML_FILES qml/components/EngineTempGuage.qml
     QML_FILES qml/components/MiniDisplay.qml
-    SOURCES qml/components/csventry.h qml/components/csventry.cpp
+    SOURCES backend/csventry.h backend/csventry.cpp
+    SOURCES backend/csvhandler.h backend/csvhandler.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

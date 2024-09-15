@@ -1,5 +1,10 @@
 import QtQuick
+
+// custom components
 import "./components"
+
+// backend components
+import CsvHandler 1.0
 
 Window {
     id: root
@@ -75,7 +80,7 @@ Window {
         id: speedGuage
         minSpeed: minSpeed
         maxSpeed: maxSpeed
-        speedValue: 60
+        speedValue: CsvHandler.speedValue
         anchors {
             bottom: parent.bottom
             horizontalCenter: parent.horizontalCenter
@@ -90,7 +95,7 @@ Window {
 
     MiniDisplay {
         id: odometerDisplay
-        speedValue: 60
+        speedValue: CsvHandler.speedValue
         odometerReading: currentOdometerReadingValue
         width: parent.height / 5
         height: parent.width / 5
