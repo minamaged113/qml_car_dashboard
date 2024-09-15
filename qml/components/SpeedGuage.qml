@@ -43,7 +43,6 @@ Item {
 
             // Set the style for the half circle
             ctx.strokeStyle = colorAccent;
-            ctx.lineWidth = 10;
 
             // Dashes' shadows
             ctx.shadowOffsetX = 1;

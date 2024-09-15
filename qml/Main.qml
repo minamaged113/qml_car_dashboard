@@ -34,6 +34,25 @@ Window {
     property real engineTemperature: 0.44 // Current engine temperature
     property real currentOdometerReadingValue: 110394 // Current odometer reading
 
+    FuelGuage {
+        id: fuelGuage
+        width: 260
+        height: width
+        fuelValue: fuel
+        anchors {
+            centerIn: parent
+            verticalCenterOffset: parent.height / 2 - width / 1.5
+            horizontalCenterOffset: 250
+        }
+        dropShadow: true
+        colorPrimary: colorMoss
+        colorAccent: colorLemon
+        colorNeutral: colorNeon
+        colorShadow: colorBlack
+        colorOk: colorMidnight
+        colorWarning: colorBurgundy
+    }
+
     SpeedGuage {
         id: speedGuage
         minSpeed: minSpeed
