@@ -16,7 +16,11 @@ qt_add_qml_module(appqml_car_dashboard
     URI qml_car_dashboard
     VERSION 1.0
     QML_FILES
-        Main.qml
+        qml/Main.qml
+
+    # images
+    RESOURCES qml/assets/images/engine_temp.png
+    RESOURCES qml/assets/images/fuel_icon.png
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
