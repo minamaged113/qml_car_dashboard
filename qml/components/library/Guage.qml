@@ -5,10 +5,9 @@ Item {
     id: root
 
     property alias dropShadow: root.allDropShadowVisible
-    property string colorPrimary
-    property string colorAccent
-    property string colorNeutral
-    property string colorShadow
+    property string colorPrimary: "#000000"
+    property string colorAccent: "#FFFFFF"
+    property string colorShadow: "#000000"
 
     property bool allDropShadowVisible: true
     property real margin: 24
@@ -16,9 +15,9 @@ Item {
     Rectangle {
         id: speedometerOuterCircle
         color: colorPrimary
-        width: parent.width
-        height: parent.height
-        radius: parent.width
+        width: root.width
+        height: root.height
+        radius: root.width
     }
 
     MultiEffect {
@@ -35,9 +34,9 @@ Item {
         id: speedometerAccent
         color: colorAccent
         anchors.centerIn: parent
-        width: parent.width - margin
-        height: parent.width - margin
-        radius: parent.width - margin
+        width: root.width - margin
+        height: root.width - margin
+        radius: root.width - margin
     }
 
     MultiEffect {
@@ -54,9 +53,9 @@ Item {
         id: speedometerInner
         color: colorPrimary
         anchors.centerIn: parent
-        width: parent.width - 2 * margin
-        height: parent.width - 2 * margin
-        radius: parent.width - 2 * margin
+        width: root.width - 2 * margin
+        height: root.width - 2 * margin
+        radius: root.width - 2 * margin
     }
 
     MultiEffect {

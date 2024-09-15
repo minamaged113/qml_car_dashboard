@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Effects
 
-
 // Custom button to unify style and ease maintainability
 Item {
     id: root
@@ -13,14 +12,14 @@ Item {
     property int radius: 5
     property string text: "Button"
 
-    signal clicked()
+    signal clicked
 
     Rectangle {
         id: openFileBtn
         color: colorPrimary
-        width: parent.width
-        height: parent.height
-        radius: parent.radius
+        width: root.width
+        height: root.height
+        radius: root.radius
 
         Text {
             id: buttonText
@@ -34,13 +33,13 @@ Item {
             id: customBtnClickableArea
             anchors.fill: openFileBtn
             onClicked: {
-                root.clicked()
+                root.clicked();
             }
         }
     }
 
     // Drop shadow
-    MultiEffect { 
+    MultiEffect {
         id: openFileBtnDropShadow
         source: openFileBtn
         anchors.fill: openFileBtn
@@ -49,5 +48,4 @@ Item {
         shadowEnabled: true
         visible: dropShadow
     }
-
 }

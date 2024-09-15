@@ -1,6 +1,5 @@
 import QtQuick
 
-
 // Draw a needles for normalized values
 Item {
     id: root
@@ -19,7 +18,7 @@ Item {
 
     Canvas {
         id: needle
-        anchors.fill: parent
+        anchors.fill: root
         onPaint: {
             var ctx = getContext("2d");
             // Clear canvas
@@ -30,7 +29,7 @@ Item {
             ctx.lineWidth = needleWidth;
 
             // Needle drop shadow
-            if(dropShadow) {
+            if (dropShadow) {
                 ctx.shadowOffsetX = 1;
                 ctx.shadowOffsetY = 1;
                 ctx.shadowBlur = 10;
@@ -38,14 +37,13 @@ Item {
             }
 
             // Draw needle from center
-            var centerX = parent.width / 2;
-            var centerY = parent.height / 2;
+            var centerX = root.width / 2;
+            var centerY = root.height / 2;
             var radius = Math.min(centerX, centerY);
 
-            console.log(value);
             var needleAngle;
             if (reverse) {
-                needleAngle = maxAngleRad + (1-value) * Math.abs(maxAngleRad - minAngleRad);
+                needleAngle = maxAngleRad + (1 - value) * Math.abs(maxAngleRad - minAngleRad);
             } else {
                 needleAngle = minAngleRad + value * (maxAngleRad - minAngleRad);
             }
@@ -53,9 +51,8 @@ Item {
             var needleStartY = centerY + margin * Math.sin(needleAngle);
             var needleEndX = centerX + radius * Math.cos(needleAngle);
             var needleEndY = centerY + radius * Math.sin(needleAngle);
-
             ctx.beginPath();
-            ctx.lineCap = "round"
+            ctx.lineCap = "round";
             ctx.strokeStyle = colorPrimary;
             ctx.moveTo(needleStartX, needleStartY);
             ctx.lineTo(needleEndX, needleEndY);
