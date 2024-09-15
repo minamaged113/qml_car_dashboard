@@ -14,6 +14,7 @@ Item {
     property int needleWidth: 10
     property bool dropShadow: true
     property int margin: 24
+    property int shortenBy: 0
     property bool reverse: false
 
     Canvas {
@@ -49,8 +50,8 @@ Item {
             }
             var needleStartX = centerX + margin * Math.cos(needleAngle);
             var needleStartY = centerY + margin * Math.sin(needleAngle);
-            var needleEndX = centerX + radius * Math.cos(needleAngle);
-            var needleEndY = centerY + radius * Math.sin(needleAngle);
+            var needleEndX = centerX + (radius - shortenBy)* Math.cos(needleAngle);
+            var needleEndY = centerY + (radius - shortenBy)* Math.sin(needleAngle);
             ctx.beginPath();
             ctx.lineCap = "round";
             ctx.strokeStyle = colorPrimary;
