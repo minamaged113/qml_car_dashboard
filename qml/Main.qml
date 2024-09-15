@@ -88,6 +88,21 @@ Window {
         colorShadow: colorBlack
     }
 
+    MiniDisplay {
+        id: odometerDisplay
+        speedValue: 60
+        odometerReading: currentOdometerReadingValue
+        width: parent.height / 5
+        height: parent.width / 5
+        anchors {
+            bottom: speedGuage.bottom
+            horizontalCenter: speedGuage.horizontalCenter
+            bottomMargin: margin * 2
+        }
+        colorPrimary: colorMoss
+        colorSecondary: colorWhite
+    }
+
     Footer {
         id: footer
         colorPrimary: colorMoss
