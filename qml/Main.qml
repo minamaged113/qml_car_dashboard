@@ -1,5 +1,5 @@
 import QtQuick
-import "./components/library"
+import "./components"
 
 Window {
     id: root
@@ -34,29 +34,14 @@ Window {
     property real engineTemperature: 0.44 // Current engine temperature
     property real currentOdometerReadingValue: 110394 // Current odometer reading
 
-    Guage {
-        id: guage
-        anchors.centerIn: parent
-        width: parent.width - 400
-        height: parent.height - 400
-    }
-
-    Needle {
-        id: needle
-        anchors.centerIn: parent
-        value: 0.75
-        maxAngleRad: 2 * Math.PI
-        minAngleRad: 0
+    Footer {
+        id: footer
+        colorPrimary: colorMoss
+        colorSecondary: colorBlack
+        colorAccent: colorLemon
         width: parent.width
-        height: parent.height
-    }
-
-    CustomBtn {
-        id: button
-        anchors.centerIn: parent
-        text: "TestButton"
-        width: 150
-        height: 60
-        radius: 5
+        height: parent.height / 10
+        dropShadow: true
+        anchors.bottom: parent.bottom
     }
 }

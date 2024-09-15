@@ -26,6 +26,8 @@ qt_add_qml_module(appqml_car_dashboard
     QML_FILES qml/components/library/Needle.qml
     QML_FILES qml/components/library/Guage.qml
     QML_FILES qml/components/library/CustomBtn.qml
+
+    QML_FILES qml/components/Footer.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
