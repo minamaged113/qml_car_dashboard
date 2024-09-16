@@ -8,6 +8,15 @@ You can choose any vehicle data to display.
 
 ![showcase](reel.gif)
 
+## Steps to use
+
+1. Clone the repository
+1. Open in Qt Creator
+1. Build the project
+1. Run the QML preview
+1. Load a compatible CSV file
+1. Press start for trying the simulation
+
 ## References
 
 - [Database](https://www.kaggle.com/datasets/jaidalmotra/vehicle-speed-data/data)
