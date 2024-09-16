@@ -9,8 +9,8 @@ import CsvHandler 1.0
 Window {
     id: root
     // Assuming the user is using iPad 12.9" as a car infotainment system
-    width: 1366
-    height: 1024
+    width: 800
+    height: 600
 
     // Window unresizeable
     maximumHeight: height
@@ -97,8 +97,8 @@ Window {
         id: odometerDisplay
         speedValue: CsvHandler.speedValue
         odometerReading: currentOdometerReadingValue
-        width: parent.height / 5
-        height: parent.width / 5
+        width: parent.height / 3
+        height: parent.width / 3
         anchors {
             bottom: speedGuage.bottom
             horizontalCenter: speedGuage.horizontalCenter
@@ -114,7 +114,7 @@ Window {
         colorSecondary: colorBlack
         colorAccent: colorLemon
         width: parent.width
-        height: parent.height / 10
+        height: parent.height / 6
         dropShadow: true
         anchors.bottom: parent.bottom
     }
