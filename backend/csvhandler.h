@@ -10,6 +10,7 @@
 #include <QString>
 #include <QStringList>
 #include <QTimer>
+#include <QUrl>
 #include <qqmlintegration.h>
 
 class CsvHandler : public QObject {

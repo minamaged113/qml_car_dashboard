@@ -28,20 +28,26 @@ void CsvHandler::getSpeed() {
 void CsvHandler::openFile(const QString &filename) {
   QStringList data;
   QString line;
+  QUrl fullFilename = filename;
+  QString qmlFilename = "";
 
   // QML gives file names with "file://" prefix
   // removing it
   qDebug() << "Given filename from QML: " + filename;
-  QString qmlFilename = filename;
-  QString localFilename = qmlFilename.replace("file://", "");
-  qDebug() << "Local filename: " + localFilename;
+  if(fullFilename.isLocalFile()) {
+      qmlFilename = fullFilename.toLocalFile();
+  } else {
+      qDebug() << "Unable to locate file.";
+      return;
+  }
 
-  QFile file(localFilename);
+  qDebug() << "Local filename: " + qmlFilename;
+
+  QFile file(qmlFilename);
 
   if (!file.exists()) {
     qDebug() << "file not found\n";
-    qDebug() << "Path: " + localFilename;
-    throw std::runtime_error("File not found.");
+    qDebug() << "Path: " + qmlFilename;
   }
 
   if (file.open(QIODevice::ReadOnly)) {
